@@ -13,6 +13,13 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(cors())
 
 
+
+app.get("/",(req,res)=>
+        {
+    res.json( {"a":10,"b":45 })
+}  );
+
+
 app.post('/add', (req, res) => {
     const a = req.body.a;
     const b = req.body.b;
