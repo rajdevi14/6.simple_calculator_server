@@ -4,7 +4,7 @@ const {add}=require('./calculator')
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
+const { urlencoded } = require('express');
 const app = express()
 
 //app.use(express.json())
@@ -12,14 +12,12 @@ app.use(bodyParser.urlencoded({extended:true}))
 
 app.use(cors())
 
+app.get('/', (req,res)=>
 
+{
+res.send("hi");
 
-app.get("/",(req,res)=>
-        {
-    res.json( {"a":10,"b":45 })
-}  );
-
-
+});
 app.post('/add', (req, res) => {
     const a = req.body.a;
     const b = req.body.b;
